@@ -11,6 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class TaskSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source="category.name", read_only=True)
+    owner_name = serializers.ReadOnlyField(source="owner.username")
 
     class Meta:
         model = Task
@@ -24,4 +25,5 @@ class TaskSerializer(serializers.ModelSerializer):
             "is_completed",
             "created_at",
             "due_date",
+            "owner_name",
         ]
