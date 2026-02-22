@@ -23,7 +23,9 @@ class TaskViewSet(viewsets.ModelViewSet):
     ordering = ["-created_at"]
 
     def get_queryset(self):
-        return Task.objects.filter(owner=self.request.user)
+        return Task.objects.filter(owner=self.request.user).select_related(
+            "category", "owner"
+        )
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
