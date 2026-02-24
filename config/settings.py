@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "TaskFlow API",
+    "TITLE": "Super TaskFlow API",
     "DESCRIPTION": "Proffesional API for managing tasks",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
