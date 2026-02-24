@@ -11,6 +11,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ["id"]
 
 
 class Task(models.Model):
